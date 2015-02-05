@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   end
   get 'sparkles/index'
 
-  get 'users/index'
+  get '/index' => 'users#index'
 
-  get 'users/profile'
+  get '/profile' => 'users#profile'
 
-  get 'users/show'
+  get '/show' => 'users#show'
 
-  get 'users/display'
+  get '/display' => 'users#display'
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
