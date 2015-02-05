@@ -1,0 +1,2 @@
+class SparkleController < ApplicationController
+end
