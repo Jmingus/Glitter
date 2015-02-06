@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
-  resources :user do
-    resources :sparkle
+  resources :users do
+    resources :sparkles
   end
-  get 'sparkles/index'
 
   get '/index' => 'users#index'
-
   get '/profile' => 'users#profile'
-
   get '/show' => 'users#show'
-
   get '/display' => 'users#display'
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.

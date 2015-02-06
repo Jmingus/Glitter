@@ -51,6 +51,7 @@ group :test, :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
-
-gem 'bootstrap-sass'
+gem 'refills'
+gem 'neat'
+gem 'bourbon'
 gem 'simple_form'
