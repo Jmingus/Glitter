@@ -2,9 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:profile]
   def index
     @users = User.all
-    @user = User.new
-    @sparkles = Sparkle.all
-    @sparkle = Sparkle.new
+    @user = User.first
+
   end
 
   def profile
