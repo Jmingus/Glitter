@@ -18,17 +18,24 @@
       <ul id="js-navigation-menu" class="navigation-menu show">
         <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Home', root_path %></a></li>
         <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Users', display_path %></a></li>
-        <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Create User', show_path %></a></li>
+        <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Sign Up', new_user_registration_path %></a></li>
 
       </ul>
     </nav>
     <div class="navigation-tools">
-	    <li class="nav-link"><a href="javascript:void(0)"><%= render partial: 'sparkles/form' %></a></li>
-		<li class="nav-link"><a href="javascript:void(0)" class="create-user"></a>
-		  <a href="javascript:void(0)" class="sign-up">Profile Name</a>
+	    <% if user_signed_in? %>
+		    <%= render partial: 'sparkles/sparkle' %>
+		  <a href="javascript:void(0)" class="sign-up"><%= current_user.profile_name %></a>
+	    <a href="javascript:void(0)" class="sign-out"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></a>
+		    <% else %>
+	    <a href="javascript:void(0)" class="sign-in"><%= link_to 'Sign In', new_user_session_path %></a>
+		    <% end %>
     </div>
   </div>
 </header>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <div class="glitter-container">
 </div>

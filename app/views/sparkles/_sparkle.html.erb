@@ -1,4 +1,4 @@
-<%= simple_form_for([@user, @new_sparkle]) do |f| %>
+<%= simple_form_for([current_user, @new_sparkle || Sparkle.new]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

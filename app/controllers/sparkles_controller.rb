@@ -1,8 +1,12 @@
 class SparklesController < ApplicationController
   def index
-    @sparkle = Sparkle.new
+    @sparkles = Sparkle.all
   end
 
+  def new
+  @sparkle = Sparkle.new
+  @user = User.find(params[:user_id])
+  end
 
   def create
     @sparkle = Sparkle.new(sparkle_params)
