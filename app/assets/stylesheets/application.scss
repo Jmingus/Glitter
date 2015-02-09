@@ -2,6 +2,7 @@
 @import "base/base";
 @import "neat";
 @import "users";
+@import "sparkles";
 .glitter-container{
   max-width: 10%;
   float:left;
@@ -276,15 +277,26 @@ header.navigation {
   }
 
   // Elements on the far right
-
   .navigation-tools {
     background: #505050;
     clear: both;
-    display: block;
+    display: inline;
     height: $navigation-height;
     padding-left: $navigation-padding / 2;
     padding-right: $navigation-padding;
 
+
+    button{
+      background-color: #FEB6E8;
+      color: black;
+      margin-top: 10px;
+    }
+    li{
+      float:left;
+      padding-right: 20px;
+
+
+    }
     @include media($large-screen) {
       background: transparent;
       clear: none;

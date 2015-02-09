@@ -23,13 +23,15 @@
       </ul>
     </nav>
     <div class="navigation-tools">
+			<ul>
 	    <% if user_signed_in? %>
-		    <%= render partial: 'sparkles/sparkle' %>
-		  <a href="javascript:void(0)" class="sign-up"><%= current_user.profile_name %></a>
-	    <a href="javascript:void(0)" class="sign-out"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></a>
+		   <li><%= render partial: 'sparkles/sparkle' %> </li>
+		  <li class="profile-button"><a href="javascript:void(0)"><button><%= current_user.profile_name %></button></a></li>
+	    <li><a href="javascript:void(0)"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></a></li>
 		    <% else %>
-	    <a href="javascript:void(0)" class="sign-in"><%= link_to 'Sign In', new_user_session_path %></a>
+	    <li><a href="javascript:void(0)"><%= link_to 'Sign In', new_user_session_path %></a></li>
 		    <% end %>
+				</ul>
     </div>
   </div>
 </header>

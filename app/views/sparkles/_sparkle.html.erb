@@ -1,8 +1,7 @@
 <%= simple_form_for([current_user, @new_sparkle || Sparkle.new]) do |f| %>
-  <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :message %>
+    <%= f.input :message, label: false%>
   </div>
 
   <div class="form-actions">
