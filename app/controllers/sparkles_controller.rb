@@ -9,8 +9,9 @@ class SparklesController < ApplicationController
   end
 
   def create
-    @sparkle = Sparkle.new(sparkle_params)
-
+    user_id = params[:user_id]
+    @sparkle = Sparkle.create(sparkle_params.merge({user_id: user_id}))
+    
     respond_to do |format|
       if @sparkle.save
         format.html { redirect_to root_path, notice: 'Sparkle WAS CREATED!' }
