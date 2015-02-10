@@ -1,0 +1,6 @@
+<% @sparkles.each do |sparkle| %>
+<ul>
+  <li><%= sparkle.message %></li>
+	<li>Created <%= time_ago_in_words(sparkle.created_at) %> ago</li>
+</ul>
+<%end %>

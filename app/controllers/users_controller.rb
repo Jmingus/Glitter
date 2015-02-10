@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @user = User.first
+    @sparkles = Sparkle.all.order("created_at DESC")
+    @sparkle = Sparkle.all
   end
 
   def profile
@@ -19,7 +21,7 @@ class UsersController < ApplicationController
 
 
   def display
-
+  @users = User.all
   end
 
   def create

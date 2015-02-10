@@ -468,3 +468,7 @@ section{
   $grid-columns: 12 !default;
 }
 
+.container{
+  float: left;
+  clear: both;
+}
