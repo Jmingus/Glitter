@@ -1,6 +1,7 @@
 class SparklesController < ApplicationController
   def index
     @sparkles = Sparkle.all
+    @user = User.find(params[:user_id])
   end
 
   def new
@@ -8,10 +9,14 @@ class SparklesController < ApplicationController
   @user = User.find(params[:user_id])
   end
 
+  def show
+    @user = User.find(params[:user_id])
+  end
+
   def create
     user_id = params[:user_id]
     @sparkle = Sparkle.create(sparkle_params.merge({user_id: user_id}))
-    
+
     respond_to do |format|
       if @sparkle.save
         format.html { redirect_to root_path, notice: 'Sparkle WAS CREATED!' }
