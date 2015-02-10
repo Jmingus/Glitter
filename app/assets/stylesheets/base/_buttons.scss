@@ -17,11 +17,11 @@ button {
   white-space: nowrap;
   background-color: #FEB6E8;
   color: black;
-  
+
   &:hover,
   &:focus {
     background-color: darken($action-color, 15%);
-    color: #fff;
+    color: black;
   }
 
   &:disabled {
